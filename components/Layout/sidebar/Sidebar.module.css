@@ -1,0 +1,5 @@
+.sidebarContainer{
+    width: 150px;
+    background: var(--baby-blue);
+    height: 100vh;
+}
