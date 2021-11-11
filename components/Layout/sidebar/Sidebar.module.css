@@ -1,5 +1,8 @@
 .sidebarContainer{
     width: 150px;
-    background: var(--baby-blue);
+    background: #161819;
     height: 100vh;
+}
+.link{
+    color: white;
 }

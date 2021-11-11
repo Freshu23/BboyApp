@@ -1,10 +1,15 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout/Layout'
+import Script from 'next/dist/client/script';
 
 function MyApp({ Component, pageProps }) {
-  return (<Layout>
+  return (
+    <>
+  <Layout>
     <Component {...pageProps} />
-  </Layout>)
+  </Layout>
+  </>
+  )
 }
 
 export default MyApp

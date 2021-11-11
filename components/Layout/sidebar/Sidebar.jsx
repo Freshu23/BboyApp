@@ -1,22 +1,33 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
+import Link from 'next/link';
 
 const Sidebar = () => {
+  const resizeMap = () =>{
+    console.log('elo')
+    setTimeout(window.dispatchEvent(new Event('resize')),500)
+  }
   return (
     <div className={styles.sidebarContainer}>
-      <div className={styles.logoContainer}>LOGO</div>
+      <Link href="/">
+        <div className={styles.logoContainer}>LOGO</div>
+      </Link>
       <ul>
         <li>
-          <h3>EVENTS</h3>
+          <h3 className={styles.link}>EVENTS</h3>
         </li>
         <li>
-          <h3>MAP</h3>
+          <Link onClick={resizeMap} href='/map-view'>
+            <h3 className={styles.link}>MAP</h3>
+          </Link>
         </li>
         <li>
-          <h3>ACCOUNT</h3>
+          <h3 className={styles.link}>ACCOUNT</h3>
         </li>
         <li>
-          <h3>ADD EVENT</h3>
+          <Link href='/add-event'>
+            <h3 className={styles.link}>ADD EVENT</h3>
+          </Link>
         </li>
       </ul>
     </div>

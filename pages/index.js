@@ -1,25 +1,20 @@
 
 import styles from '../styles/Home.module.css'
 import { useState } from 'react'
+import Head from 'next/head';
+import { getEvents } from '../firebase/firebaseConfig';
 
 export default function Home({articles}) {
   console.log(articles)
   const [x,setX]=useState([])
   return (
     <div className={styles.container}>
-     <h1>{x}</h1>
+      <Head>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgDpMx1R4rp7PcerWXYXpODWKqALHZVvk&libraries=places"></script>
+      </Head>
+     <h1>LOOKING FOR DOPE EVENTS? WE'VE GOT YOU!</h1>
      <button onClick={()=>(setX('test'))}>click</button>
     </div>
   )
 }
 
-export const getStaticProps = async() =>{
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=6')
-  const articles = await res.json()
-
-  return {
-    props:{
-      articles
-    }
-  }
-}

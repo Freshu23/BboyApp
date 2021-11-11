@@ -1,0 +1,8 @@
+.content{
+    display: flex;
+}
+.contentRight{
+    display: flex;
+    justify-content: center;
+    width: calc( 100vw - 150px);
+}
