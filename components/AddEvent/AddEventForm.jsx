@@ -51,7 +51,7 @@ export const AddEventForm = () => {
             </div>
             <div className={styles.inputRow}>
                 <p className={styles.fileLabel}>image</p>
-                <label className={styles.fileInputLabel} for="file-upload">click to choose image</label>
+                <label className={styles.fileInputLabel} htmlFor="file-upload">click to choose image</label>
                 <input id="file-upload" className={styles.fileInput} type="file"/>
             </div>
             <div className={styles.inputRow}>

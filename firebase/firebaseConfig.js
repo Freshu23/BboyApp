@@ -34,15 +34,14 @@ export const addEvent = (name,description,lat,lng,date,currentDate)=>{
     });
 }
 
-export const getEvents =()=>{
-    db.collection("Events").get().then((doc) => {
-        if (doc.exists) {
-            console.log("Document data:", doc.data());
-        } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-        }
-    }).catch((error) => {
-        console.log("Error getting document:", error);
-    });    
+export const getEvents =(setEventToState)=>{
+    db.collection("Events").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+            setEventToState(doc.data())
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
 }
