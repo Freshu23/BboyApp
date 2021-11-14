@@ -42,6 +42,7 @@ export const AddEventForm = () => {
     if (place.label) {
       addCoordinates();
     }
+<<<<<<< HEAD
   }, [place]);
   return (
     <div className={styles.formWrapper}>
@@ -92,5 +93,54 @@ export const AddEventForm = () => {
     </div>
   );
 };
+=======
+    const addNewEvent =() =>{
+        addEvent(name,description,`${coordinates.lat}`,`${coordinates.lng}`,date,currentDate)
+    }
+    useEffect(()=>{
+        const today = new Date();
+        const currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        setCurrentDate(currentDate)
+    },[])
+    useEffect(()=>{
+        if(place.label){
+            addCoordinates()
+        }
+    },[place])
+    return (
+        <div className={styles.formWrapper}>
+            <div className={styles.inputRow}>
+                <label>Event Name</label>
+                <input onChange={e=>setName(e.target.value)} className={styles.formInput}></input>
+            </div>
+            <div className={styles.inputRow}>
+                <label>Place</label>
+                <GooglePlacesAutocomplete
+                apiKey="AIzaSyAgDpMx1R4rp7PcerWXYXpODWKqALHZVvk" 
+                 selectProps={{
+                    place,
+                    onChange: setPlace,
+                }}/>
+            </div>
+            <div className={styles.inputRow}>
+                <p className={styles.fileLabel}>image</p>
+                <label className={styles.fileInputLabel} htmlFor="file-upload">click to choose image</label>
+                <input id="file-upload" className={styles.fileInput} type="file"/>
+            </div>
+            <div className={styles.inputRow}>
+                <label>description</label>
+                <textarea onChange={e=>setDescription(e.target.value)} className={styles.description}></textarea>
+            </div>
+            <div className={styles.inputRow}>
+                <label>date</label>
+                <input onChange={e=>setDate(e.target.value)} className={styles.datePicker} type="date"></input>
+            </div>
+            <div className={styles.buttonWrapper}>
+                <button onClick={addNewEvent} className={styles.submitBtn}>ADD EVENT</button>
+            </div>
+        </div>
+    )
+}
+>>>>>>> 39cc10b8d9718e9549f57237f24bfd907da4f36d
 
 export default AddEventForm;

@@ -5,4 +5,10 @@
 }
 .link{
     color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.menuList{
+    list-style: none;
 }
