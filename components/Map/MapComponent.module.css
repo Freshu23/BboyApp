@@ -1,3 +1,10 @@
 .markerIcon{
     width: 30px;
 }
+.popupLogo{
+    width: 55px;
+}
+.eventName{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+}

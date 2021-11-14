@@ -1,6 +1,9 @@
 import { initializeApp } from 'firebase/app';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/storage';
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+
 const firebaseConfig = {
     apiKey: "AIzaSyBCigLLiohmJ5L2MMjUS_eWlY40BNzVgWk",
     authDomain: "bboyapp-374a4.firebaseapp.com",
@@ -15,8 +18,10 @@ if(!firebase.apps.length){
     firebase.initializeApp(firebaseConfig)
 }
 const db = firebase.firestore();
+export const storage = firebase.storage()
+const storageRef = storage.ref();
 
-export const addEvent = (name,description,lat,lng,date,currentDate)=>{
+export const addEvent = (name,description,lat,lng,date,currentDate,logo)=>{
     console.log(name,description,lat,lng,date)
     db.collection("Events").add({
         name: name,
@@ -24,7 +29,8 @@ export const addEvent = (name,description,lat,lng,date,currentDate)=>{
         lat:lat,
         lng:lng,
         date:date,
-        timestamp:currentDate
+        timestamp:currentDate,
+        logo:logo
     })
     .then((docRef) => {
         alert('git');
@@ -37,11 +43,19 @@ export const addEvent = (name,description,lat,lng,date,currentDate)=>{
 export const getEvents =(setEventToState)=>{
     db.collection("Events").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data());
-            setEventToState(doc.data())
+                fetchImagesForOffer(doc.data(),setEventToState)
         });
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
     });
 }
+const fetchImagesForOffer = async (doc,setEventToState) => {
+    storageRef.child(`${doc.logo}`).getDownloadURL()
+    .then((url) => {
+        setEventToState({...doc,logoURL:url})
+    })
+    .catch((error) => {
+      // Handle any errors
+    });
+};

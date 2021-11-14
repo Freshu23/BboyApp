@@ -29,3 +29,10 @@ a {
   width: calc( 100vw - 150px);
   height: 100vh;
 }
+.leaflet-popup-content{
+  width: 200px !important;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
