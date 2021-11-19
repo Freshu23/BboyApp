@@ -14,11 +14,17 @@ export const AddEventForm = () => {
   const [coordinates, setCoordinates] = useState({ lat: "", lng: "" });
   const [currentDate, setCurrentDate] = useState("");
   const [logo, setLogo] = useState("red-bull.png");
+  const [fileURL, setFileURL] = useState(false);
 
   const onFileChange = e => {
     const file = e.target.files[0];
     const storageRef = storage.ref();
     const fileRef = storageRef.child(`${file.name}`);
+    const reader = new FileReader();
+    const url = reader.readAsDataURL(file);
+    reader.onloadend = function () {
+      setFileURL(reader.result);
+    };
     fileRef.put(file).then(() => console.log("uploaded succsessfully"));
     setLogo(`${file.name}`);
   };
@@ -49,7 +55,8 @@ export const AddEventForm = () => {
       `${coordinates.lng}`,
       date,
       currentDate,
-      logo
+      logo,
+      place.label
     );
   };
 
@@ -70,13 +77,12 @@ export const AddEventForm = () => {
         <label>Event Name</label>
         <input
           onChange={e => setName(e.target.value)}
-          className={styles.formInput}
-        ></input>
+          className={styles.formInput}></input>
       </div>
       <div className={styles.inputRow}>
         <label>Place</label>
         <GooglePlacesAutocomplete
-          apiKey="AIzaSyAgDpMx1R4rp7PcerWXYXpODWKqALHZVvk"
+          apiKey='AIzaSyAgDpMx1R4rp7PcerWXYXpODWKqALHZVvk'
           selectProps={{
             place,
             onChange: setPlace,
@@ -85,30 +91,29 @@ export const AddEventForm = () => {
       </div>
       <div className={styles.inputRow}>
         <p className={styles.fileLabel}>image</p>
-        <label className={styles.fileInputLabel} htmlFor="file-upload">
+        <label className={styles.fileInputLabel} htmlFor='file-upload'>
           click to choose image
         </label>
         <input
           onChange={onFileChange}
-          id="file-upload"
+          id='file-upload'
           className={styles.fileInput}
-          type="file"
+          type='file'
         />
       </div>
+      {fileURL && <img className={styles.previewImg} src={fileURL} />}
       <div className={styles.inputRow}>
         <label>description</label>
         <textarea
           onChange={e => setDescription(e.target.value)}
-          className={styles.description}
-        ></textarea>
+          className={styles.description}></textarea>
       </div>
       <div className={styles.inputRow}>
         <label>date</label>
         <input
           onChange={e => setDate(e.target.value)}
           className={styles.datePicker}
-          type="date"
-        ></input>
+          type='date'></input>
       </div>
       <div className={styles.buttonWrapper}>
         <button onClick={addNewEvent} className={styles.submitBtn}>

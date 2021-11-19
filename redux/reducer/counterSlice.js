@@ -4,20 +4,20 @@ export const eventSlice = createSlice({
   name: 'event',
   initialState: {
     events: [],
+    currentEvent:{
+      name:"no event selected"
+    }
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
     incrementByAmount: (state, action) => {
       state.events = [...state.events,action.payload]
     },
+    setCurrentEvent: (state,action)=>{
+      state.currentEvent = action.payload
+    }
   },
 })
 
-export const { increment, decrement, incrementByAmount } = eventSlice.actions
+export const { setCurrentEvent, incrementByAmount } = eventSlice.actions
 
 export default eventSlice.reducer

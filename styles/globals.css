@@ -30,9 +30,10 @@ a {
   height: 100vh;
 }
 .leaflet-popup-content{
-  width: 200px !important;
-  height: 70px;
+  width: 250px !important;
+  height: 130px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
 }

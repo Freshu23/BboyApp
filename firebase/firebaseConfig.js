@@ -21,16 +21,17 @@ const db = firebase.firestore();
 export const storage = firebase.storage()
 const storageRef = storage.ref();
 
-export const addEvent = (name,description,lat,lng,date,currentDate,logo)=>{
-    console.log(name,description,lat,lng,date)
+export const addEvent = (name,description,lat,lng,date,currentDate,logo,place)=>{
     db.collection("Events").add({
+        id:Math.random(),
         name: name,
         description:description,
         lat:lat,
         lng:lng,
         date:date,
         timestamp:currentDate,
-        logo:logo
+        logo:logo,
+        place:place
     })
     .then((docRef) => {
         alert('git');
@@ -43,6 +44,7 @@ export const addEvent = (name,description,lat,lng,date,currentDate,logo)=>{
 export const getEvents =(setEventToState)=>{
     db.collection("Events").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+                console.log(doc.data())
                 fetchImagesForOffer(doc.data(),setEventToState)
         });
     })
