@@ -1,26 +1,32 @@
-.markerIcon{
-    width: 30px;
+.markerIcon {
+  width: 50px;
 }
-.popupLogo{
-    width: 75px;
+.popupLogo {
+  width: 75px;
 }
-.eventName{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 20px;
-    margin: 0 0 5px 0;
+.eventName {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  margin: 0 0 5px 0;
 }
-.popupIcon{
-    width: 16px;
-    height: 16px;
+.popupIcon {
+  width: 16px;
+  height: 16px;
 }
-.popupRow{
-    display: flex;
+.popupRow {
+  display: flex;
 }
-.popupText{
-    font-family: 'Bebas Neue', cursive;
-    margin: 0 0 2px 10px !important;
-    font-size: 16px;
+.popupText {
+  font-family: 'Bebas Neue', cursive;
+  margin: 0 0 2px 10px !important;
+  font-size: 16px;
 }
-.popupRightSide{
-    margin-left: 15px;
+.popupRightSide {
+  margin-left: 15px;
+}
+.map {
+  width: 100%;
+  border-radius: 16px 0 0 0;
+  height: calc(100vh - 80px);
+  z-index: 0;
 }

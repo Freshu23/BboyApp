@@ -1,8 +1,10 @@
-.content{
-    display: flex;
+.content {
+  display: flex;
+  flex-direction: column;
 }
-.contentRight{
-    display: flex;
-    justify-content: center;
-    width: calc( 100vw - 150px);
+.loadingScreen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #ffff;
 }

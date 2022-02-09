@@ -1,0 +1,12 @@
+.btn {
+  background-color: var(--baby-blue);
+  border-radius: 16px;
+  color: white;
+  border: none;
+  padding: 0 30px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Space Grotesk';
+  transition: ease-in-out 0.2s;
+  height: 40px;
+}

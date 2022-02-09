@@ -1,0 +1,41 @@
+.blockContainer {
+  width: 450px;
+  height: 170px;
+  box-shadow: 0px 12px 26px -7px rgba(27, 34, 65, 0.16);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 30px;
+  background-color: white;
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 16px;
+}
+
+.blockIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+.blockRow {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+.blockImage {
+  width: 115px;
+  border-radius: 10px;
+  height: 115px;
+}
+.blockInfo {
+  margin-left: 30px;
+}
+.blockInfo h1 {
+  margin: 0;
+}
+.blockInfo p {
+  margin: 5px 0;
+}
+.eventTitle {
+  font-size: 24px;
+}
