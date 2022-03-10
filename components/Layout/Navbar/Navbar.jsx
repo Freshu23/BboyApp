@@ -3,45 +3,69 @@ import styles from './Navbar.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
 import clsx from 'clsx';
-import { MultiSelect, Modal, Chip, Chips } from '@mantine/core';
+import { Modal, Chip, Chips } from '@mantine/core';
 import Button from '../../shared/Button/Button';
+import { categories } from '../../../utils/categories';
 
 const Sidebar = () => {
   const router = useRouter();
   const [opened, setOpened] = useState(false);
-  const categories = ['2v2', '1v1', 'Crew battle', 'Top rock'];
+
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.navbarLeft}>
         <Link href='/' passHref>
           <div className={styles.logoContainer}>BBOYAPP</div>
         </Link>
-        {/* <button
-          className={styles.filtersButton}
-          onClick={() => setOpened(true)}>
-          <img className={styles.filtersImage} src={'/filter_white.png'} />
-          Filters
-        </button> */}
       </div>
-      <Modal
-        size={550}
-        centered
-        opened={opened}
-        onClose={() => setOpened(false)}>
-        <div className={styles.modalContent}>
-          <h1>Event categories</h1>
-          <Chips multiple>
-            <Chip value='1vs1'>1vs1</Chip>
-            <Chip value='2vs2'>2vs2</Chip>
-            <Chip value='Crew battle'>Crew battle</Chip>
-            <Chip value='Top Rock'>Top Rock</Chip>
-            <Chip value='All styles'>All styles</Chip>
-          </Chips>
-          <button className={styles.blueButton}>Search events</button>
-        </div>
-      </Modal>
 
-      <ul className={styles.menuList}>
+      <div
+        className={styles.burgerContainer}
+        onClick={() => setOpened(!opened)}>
+        <svg
+          style={{ overflow: 'visible' }}
+          width='38'
+          height='28'
+          viewBox='0 0 38 28'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'>
+          <g id='Group 760'>
+            <line
+              id='Line 4'
+              y1='2.5'
+              x2='38'
+              y2='2.5'
+              stroke='black'
+              strokeWidth='4'
+              className={clsx({ ['line']: true, ['line-1-open']: opened })}
+            />
+            <line
+              id='Line 6'
+              y1='25.5'
+              x2='38'
+              y2='25.5'
+              stroke='black'
+              strokeWidth='4'
+              className={clsx({ ['line']: true, ['line-2-open']: opened })}
+            />
+            <line
+              id='Line 5'
+              y1='14'
+              x2='38'
+              y2='14'
+              stroke='black'
+              strokeWidth='4'
+              className={clsx({ ['line']: true, ['line-3-open']: opened })}
+            />
+          </g>
+        </svg>
+      </div>
+
+      <ul
+        className={clsx({
+          [styles.menuList]: true,
+          [styles.openMenuList]: opened,
+        })}>
         <Link href='/' passHref>
           <a
             className={clsx(styles.link, {

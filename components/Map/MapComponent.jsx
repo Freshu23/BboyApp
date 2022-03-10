@@ -41,7 +41,7 @@ const MapComponent = () => {
             icon={icon}
             position={[event.lat, event.lng]}>
             <div onClick={() => handleRedirect(event)}>
-              <Popup>
+              <Popup className={styles.popUp}>
                 <img className={styles.popupLogo} src={event.logoURL} />
                 <div className={styles.popupRightSide}>
                   <h3 className={styles.eventName}>{event.name}</h3>

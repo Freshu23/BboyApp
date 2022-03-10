@@ -4,9 +4,7 @@ export const eventSlice = createSlice({
   name: 'event',
   initialState: {
     events: [],
-    currentEvent: {
-      name: 'no event selected',
-    },
+    currentEvent: null,
   },
   reducers: {
     setEvents: (state, action) => {

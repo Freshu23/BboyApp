@@ -110,8 +110,40 @@
   border: none;
   color: white;
 }
+.burgerContainer {
+  display: none;
+}
 @media screen and (max-width: 720px) {
   .menuList {
-    display: none;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    position: absolute;
+    background-color: white;
+    left: 0;
+    top: 64px;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    transform: translateX(100%);
+    transition: ease-in-out 0.4s;
+    padding-top: 50px;
+  }
+  .openMenuList {
+    transform: translateX(0);
+  }
+  .burgerContainer {
+    display: block;
+    margin-left: 90px;
+  }
+  .link {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .menuList li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

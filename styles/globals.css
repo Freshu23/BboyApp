@@ -14,6 +14,18 @@ body,
 #__next {
   height: 100%;
 }
+.mantine-Modal-inner::-webkit-scrollbar,
+.content::-webkit-scrollbar {
+  background: var(--dark-gray);
+}
+.content::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+.mantine-Modal-inner::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb {
+  background: var(--baby-blue);
+  border-radius: 15px;
+}
 
 a {
   color: inherit;
@@ -35,6 +47,8 @@ a {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  overflow-x: hidden;
 }
 .container {
   display: flex;
@@ -60,4 +74,18 @@ a {
 }
 .leaflet-popup {
   left: -129px !important;
+}
+
+/*burger menu animation*/
+.line {
+  transition: ease-in-out 0.3s;
+}
+.line-1-open {
+  transform: rotate(40deg) translateX(4px);
+}
+.line-3-open {
+  transform: rotate(-40deg) translateY(9px) translateX(-17px);
+}
+.line-2-open {
+  opacity: 0;
 }

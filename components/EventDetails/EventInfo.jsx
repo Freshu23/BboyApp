@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './EventInfo.module.css';
 import Chip from '../shared/Chip/Chip';
 import DetailsMap from '../Map/DetailsMap/DetailsMap';
-const EventInfo = ({ event }) => {
+const EventInfo = ({ event, handleModal }) => {
   return (
     <div className={styles.infoContainer}>
       <div className={styles.upperSection}>
@@ -24,7 +24,11 @@ const EventInfo = ({ event }) => {
               <Chip key={Math.random()} value={category} />
             ))}
           </div>
-          <button className={styles.registerButton}>Register</button>
+          <button
+            onClick={() => handleModal(true)}
+            className={styles.registerButton}>
+            Register
+          </button>
         </div>
       </div>
       <div className={styles.divider} />

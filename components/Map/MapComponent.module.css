@@ -30,3 +30,6 @@
   height: calc(100vh - 80px);
   z-index: 0;
 }
+.popUp {
+  z-index: 99;
+}

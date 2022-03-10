@@ -37,7 +37,7 @@ const EventsList = () => {
   console.log(events);
 
   return (
-    <div className={styles.listContainer}>
+    <div className={styles.listContainerHidden}>
       <div className={styles.categoriesContainer}>
         <MultiSelect
           transitionDuration={150}

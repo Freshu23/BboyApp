@@ -22,6 +22,7 @@ const MapComponent = ({ event }) => {
           width: 300,
           borderRadius: '16px',
           float: 'right',
+          zIndex: 0,
         }}
         center={[event.lat, event.lng]}
         zoom={10}

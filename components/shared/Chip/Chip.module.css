@@ -12,7 +12,12 @@
   margin-right: 15px;
   transition: ease-in-out 0.2s;
   white-space: nowrap;
+  cursor: pointer;
 }
 .chip:hover {
   transform: scale(1.05);
+}
+.chipActive {
+  background-color: var(--baby-blue);
+  color: white;
 }
