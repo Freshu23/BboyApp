@@ -1,16 +1,16 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import ReactDOMServer from 'react-dom/server';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-import { useRouter } from 'next/dist/client/router';
-import styles from './DetailsMapComponent';
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import ReactDOMServer from "react-dom/server";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import { useRouter } from "next/dist/client/router";
+import styles from "./DetailsMapComponent";
 
 const MapComponent = ({ event }) => {
   const icon = L.divIcon({
-    className: 'custom-icon',
+    className: "custom-icon",
     html: ReactDOMServer.renderToString(
-      <img className={styles.markerIcon} src={'/marker.png'} />
+      <img className={styles.markerIcon} src={"/marker.png"} />
     ),
   });
 
@@ -19,24 +19,26 @@ const MapComponent = ({ event }) => {
       <MapContainer
         style={{
           height: 300,
-          width: 300,
-          borderRadius: '16px',
-          float: 'right',
+          width: 850,
+          borderRadius: "0 0 16px 16px",
+          float: "right",
           zIndex: 0,
         }}
         center={[event.lat, event.lng]}
         zoom={10}
         scrollWheelZoom={true}
-        zoomControl={false}>
+        zoomControl={false}
+      >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
+          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
         />
 
         <Marker
           key={Math.random()}
           icon={icon}
-          position={[event.lat, event.lng]}></Marker>
+          position={[event.lat, event.lng]}
+        ></Marker>
       </MapContainer>
     </div>
   );

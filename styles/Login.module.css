@@ -1,0 +1,70 @@
+.loginContainer {
+  display: flex;
+}
+.loginContainer > div {
+  width: 50%;
+  height: 100vh;
+  background-size: cover;
+  background-color: white;
+  background-position: 0 -100px;
+}
+.loginLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginDivider span {
+  font-weight: bold;
+}
+.loginDividerLine {
+  width: 48%;
+  height: 1px;
+  background-color: var(--light-gray2);
+}
+.loginDivider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+}
+.loginInput {
+  box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 4px;
+  outline: none;
+  border: 0.5px solid var(--light-gray2);
+  font-family: "Inter";
+}
+.loginButton {
+  width: 100%;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+}
+.loginForm h3,
+.loginForm h1 {
+  margin: 0;
+  align-self: flex-start;
+}
+.loginForm h1 {
+  font-size: 64px;
+  margin-bottom: 50px;
+}
+.loginForm h3 {
+  color: var(--baby-blue);
+}
+.registerText {
+  margin-top: 45px;
+  font-weight: bold;
+}
+.registerText a {
+  color: var(--baby-blue);
+}

@@ -3,13 +3,16 @@
   box-shadow: 0px 7px 21px rgba(92, 122, 255, 0.3);
   color: white;
   border: none;
-  border-radius: 16px;
+  border-radius: 4px;
   border: none;
   padding: 0 30px;
   cursor: pointer;
-  font-family: 'Space Grotesk';
+  font-family: "Inter";
   transition: ease-in-out 0.2s;
   height: 48px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
 }
 @media screen and (max-width: 720px) {
   .btn {

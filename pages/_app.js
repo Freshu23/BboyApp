@@ -1,10 +1,10 @@
-import '../styles/globals.css';
-import Layout from '../components/Layout/Layout';
-import Script from 'next/dist/client/script';
-import { Provider } from 'react-redux';
-import store from '../redux/store';
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import "../styles/globals.css";
+import Layout from "../components/Layout/Layout";
+import Script from "next/dist/client/script";
+import { Provider } from "react-redux";
+import store from "../redux/store";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -18,14 +18,18 @@ function MyApp({ Component, pageProps }) {
       setPageLoading(false);
     };
 
-    router.events.on('routeChangeStart', handleStart);
-    router.events.on('routeChangeComplete', handleFinish);
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleFinish);
   }, [router]);
   return (
     <Provider store={store}>
-      <Layout pageLoading={pageLoading}>
+      {router.pathname === "/login" || router.pathname === "/register" ? (
         <Component {...pageProps} />
-      </Layout>
+      ) : (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      )}
     </Provider>
   );
 }
