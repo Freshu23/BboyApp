@@ -12,6 +12,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.backArrow {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  cursor: pointer;
 }
 .loginDivider span {
   font-weight: bold;
@@ -37,7 +44,7 @@
   border-radius: 4px;
   outline: none;
   border: 0.5px solid var(--light-gray2);
-  font-family: "Inter";
+  font-family: 'Inter';
 }
 .loginButton {
   width: 100%;

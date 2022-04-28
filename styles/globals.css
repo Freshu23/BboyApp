@@ -8,7 +8,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Inter", cursive;
-  background-color: var(--light-gray);
+  /* background-color: var(--light-gray); */
 }
 html,
 body,
@@ -93,3 +93,4 @@ a {
 .line-2-open {
   opacity: 0;
 }
+

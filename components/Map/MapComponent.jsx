@@ -5,7 +5,7 @@ import ReactDOMServer from 'react-dom/server';
 import styles from './MapComponent.module.css';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { getEvents } from '../../firebase/firebaseConfig';
+import { getEvents } from '../../firebase/service/events';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/dist/client/router';
 import { setCurrentEvent } from '../../redux/reducer/counterSlice';

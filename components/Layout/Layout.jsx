@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar/Navbar';
 import styles from './Layout.module.css';
-import { getEvents } from '../../firebase/firebaseConfig';
+import { getEvents } from '../../firebase/service/events';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setEvent } from '../../redux/reducer/counterSlice';

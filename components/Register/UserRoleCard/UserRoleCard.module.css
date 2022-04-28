@@ -1,0 +1,21 @@
+.container{
+    width: 350px;
+    height: 350px;
+    padding: 25px;
+    margin: 0 30px;
+    border: 1px solid var(--light-gray2);
+    border-radius: 8px;
+    background-color: white;
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+}
+.container:hover{
+    transform: scale(1.04);
+}
+.container h3{
+    color: var(--light-gray2);
+}
+.checked{
+    border: 2px solid var(--baby-blue);
+
+}

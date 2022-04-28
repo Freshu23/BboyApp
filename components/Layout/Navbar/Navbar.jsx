@@ -75,9 +75,9 @@ const Sidebar = () => {
           </a>
         </Link>
 
-        <li>
+        <Link href='/login'>
           <a className={styles.link}>Account</a>
-        </li>
+        </Link>
 
         <li>
           <Link href='/add-event' passHref>

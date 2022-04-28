@@ -1,7 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/storage';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
 const firebaseConfig = {
@@ -14,66 +13,9 @@ const firebaseConfig = {
   measurementId: 'G-JDRGZ0XMNM',
 };
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
-const db = firebase.firestore();
-export const storage = firebase.storage();
-const storageRef = storage.ref();
+const app = initializeApp(firebaseConfig);
 
-export const addEvent = (
-  name,
-  description,
-  lat,
-  lng,
-  date,
-  currentDate,
-  logo,
-  place,
-  categories
-) => {
-  db.collection('Events')
-    .add({
-      id: Math.random(),
-      name: name,
-      description: description,
-      lat: lat,
-      lng: lng,
-      date: date,
-      timestamp: currentDate,
-      logo: logo,
-      place: place,
-      categories: categories,
-    })
-    .then(docRef => {
-      alert('git');
-    })
-    .catch(error => {
-      console.error('Error adding document: ', error);
-    });
-};
-
-export const getEvents = setEventToState => {
-  db.collection('Events')
-    .get()
-    .then(querySnapshot => {
-      querySnapshot.forEach(doc => {
-        console.log(doc.data());
-        fetchImagesForOffer(doc.data(), setEventToState);
-      });
-    })
-    .catch(error => {
-      console.log('Error getting documents: ', error);
-    });
-};
-const fetchImagesForOffer = async (doc, setEventToState) => {
-  storageRef
-    .child(`${doc.logo}`)
-    .getDownloadURL()
-    .then(url => {
-      setEventToState({ ...doc, logoURL: url });
-    })
-    .catch(error => {
-      // Handle any errors
-    });
-};
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+export const storageRef = ref(storage);

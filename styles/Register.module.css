@@ -1,0 +1,37 @@
+.firstStepContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cardsContainer{
+    margin-top: 30px;
+    display: flex;
+}
+.backArrow {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+  }
+.firstStepContainer h1{
+    font-size: 28px;
+}
+.secondStepContainer{
+    display: flex;
+}
+
+.registerLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.secondStepContainer > div {
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+    background-color: white;
+    background-position: 0 -100px;
+  }
