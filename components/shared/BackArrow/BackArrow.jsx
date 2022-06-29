@@ -1,11 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import { ArrowLeft } from 'react-feather';
-import styles from './BackArrow.module.css';
+import React from "react";
+import Link from "next/link";
+import { ArrowLeft } from "react-feather";
+import styles from "./BackArrow.module.css";
 
-const BackArrow = link => {
+const BackArrow = (link) => {
   return (
-    <Link href={link}>
+    <Link passHref href={link}>
       <ArrowLeft className={styles.backArrow} />
     </Link>
   );

@@ -2,20 +2,23 @@ import React from "react";
 import styles from "./EventInfo.module.css";
 import Chip from "../shared/Chip/Chip";
 import DetailsMap from "../Map/DetailsMap/DetailsMap";
+import Image from "next/image";
 const EventInfo = ({ event, handleModal }) => {
   return (
     <div className={styles.infoContainer}>
       <div className={styles.upperSection}>
-        <img className={styles.logo} src={event.logoURL} />
+        <div className={styles.logo}>
+          <Image width="100%" height="100%" src={event.logoURL} alt="logo" />
+        </div>
 
         <div className={styles.detailsWrapper}>
           <h1 className={styles.infoTitle}>{event.name}</h1>
           <div className={styles.infoRow}>
-            <img className={styles.infoIcon} src={"/location.png"} />
+            {/* <img className={styles.infoIcon} src={"/location.png"} /> */}
             <p>{event.place}</p>
           </div>
           <div className={styles.infoRow}>
-            <img className={styles.infoIcon} src={"/calendar.png"} />
+            {/* <img className={styles.infoIcon} src={"/calendar.png"} /> */}
             <p>{event.date}</p>
           </div>
           <h2>Categories</h2>

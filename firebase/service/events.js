@@ -1,21 +1,24 @@
-import { db, storage } from '../firebaseConfig';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
-import { ref, getDownloadURL } from 'firebase/storage';
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+import { app } from "../firebaseConfig";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-//firebase v9
-export const addEvent = event => {
-  addDoc(collection(db, 'cities'), {
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+export const addEvent = (event) => {
+  addDoc(collection(db, "cities"), {
     event,
   });
 };
-export const getEvents = async setEventToState => {
-  const querySnapshot = await getDocs(collection(db, 'Events'));
-  querySnapshot.forEach(doc => {
+export const getEvents = async (setEventToState) => {
+  const querySnapshot = await getDocs(collection(db, "Events"));
+  querySnapshot.forEach((doc) => {
     fetchImagesForOffer(doc.data(), setEventToState);
   });
 };
 const fetchImagesForOffer = async (doc, setEventToState) => {
-  getDownloadURL(ref(storage, `${doc.logo}`)).then(url => {
+  getDownloadURL(ref(storage, `${doc.logo}`)).then((url) => {
     setEventToState({ ...doc, logoURL: url });
   });
 };

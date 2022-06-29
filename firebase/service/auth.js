@@ -1,14 +1,17 @@
-import { auth } from '../firebaseConfig';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { parseError } from '../errorPasrer';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { parseError } from "../errorPasrer";
+import { app } from "../firebaseConfig";
+import { getAuth } from "firebase/auth";
+
+const auth = getAuth(app);
 
 export const registerUser = (email, password, onError) => {
   createUserWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
+    .then((userCredential) => {
       const user = userCredential.user;
       console.log(user);
     })
-    .catch(error => {
+    .catch((error) => {
       onError(parseError(error.code));
       setTimeout(() => {
         onError(null);
