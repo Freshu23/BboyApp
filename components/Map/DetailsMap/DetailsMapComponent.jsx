@@ -5,12 +5,19 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useRouter } from "next/dist/client/router";
 import styles from "./DetailsMapComponent";
+import Image from "next/image";
 
 const MapComponent = ({ event }) => {
   const icon = L.divIcon({
     className: "custom-icon",
     html: ReactDOMServer.renderToString(
-      <img className={styles.markerIcon} src={"/marker.png"} />
+      <Image
+        width={30}
+        height={30}
+        alt="icon"
+        className={styles.markerIcon}
+        src={"/marker.png"}
+      />
     ),
   });
 
