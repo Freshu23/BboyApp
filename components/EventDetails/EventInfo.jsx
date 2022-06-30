@@ -7,9 +7,7 @@ const EventInfo = ({ event, handleModal }) => {
   return (
     <div className={styles.infoContainer}>
       <div className={styles.upperSection}>
-        <div className={styles.logo}>
-          <Image width="100%" height="100%" src={event.logoURL} alt="logo" />
-        </div>
+        <img className={styles.logo} src={event.logoURL} alt="logo" />
 
         <div className={styles.detailsWrapper}>
           <h1 className={styles.infoTitle}>{event.name}</h1>

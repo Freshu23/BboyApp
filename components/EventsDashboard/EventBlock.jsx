@@ -17,15 +17,15 @@ const EventBlock = ({ event }) => {
       className={styles.blockContainer}
       onClick={() => handleRedirect(event)}
     >
-      {/* <img className={styles.blockImage} src={event.logoURL} /> */}
+      <img className={styles.blockImage} src={event.logoURL} />
       <div className={styles.blockInfo}>
         <h1 className={styles.eventTitle}>{event.name}</h1>
         <div className={styles.blockRow}>
-          {/* <img className={styles.blockIcon} src={'/location.png'} /> */}
+          <img className={styles.blockIcon} src={"/location.png"} />
           <p className={styles.popupText}>{event.place}</p>
         </div>
         <div className={styles.blockRow}>
-          {/* <img className={styles.blockIcon} src={'/calendar.png'} /> */}
+          <img className={styles.blockIcon} src={"/calendar.png"} />
           <p className={styles.popupText}>{event.date}</p>
         </div>
       </div>
