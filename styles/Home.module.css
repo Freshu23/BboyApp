@@ -30,9 +30,13 @@
     position: absolute;
     opacity: 0;
     border-radius: 0;
+    z-index: -1;
+    pointer-events: none;
   }
   .mapContainerActive {
     opacity: 1;
+    z-index: 9;
+    pointer-events: all;
   }
   .mapButton {
     position: fixed;
