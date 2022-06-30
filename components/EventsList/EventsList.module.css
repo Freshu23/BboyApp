@@ -52,11 +52,15 @@
 @media screen and (max-width: 720px) {
   .eventsList {
     height: 100%;
+    width: 95%;
   }
   .listContainerHidden {
     display: none;
   }
   .listContainer {
     width: 100%;
+  }
+  .switcherContainer {
+    display: none;
   }
 }

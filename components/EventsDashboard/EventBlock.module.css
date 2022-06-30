@@ -12,7 +12,7 @@
   border-radius: 16px;
   transition: ease-in-out 0.2s;
 }
-.blockContainer:hover{
+.blockContainer:hover {
   transform: scale(1.03);
 }
 
@@ -51,5 +51,11 @@
   .blockImage {
     width: 80px;
     height: 80px;
+  }
+  .blockInfo p {
+    font-size: 12px;
+  }
+  .blockInfo h1 {
+    font-size: 20px;
   }
 }

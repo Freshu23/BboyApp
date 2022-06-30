@@ -27,7 +27,12 @@
 @media screen and (max-width: 720px) {
   .mapContainer {
     width: 100%;
+    position: absolute;
+    opacity: 0;
     border-radius: 0;
+  }
+  .mapContainerActive {
+    opacity: 1;
   }
   .mapButton {
     position: fixed;
@@ -37,7 +42,7 @@
     width: 200px;
     border-radius: 8px;
     font-size: 17px;
-    font-family: 'Space Grotesk', cursive;
+    font-family: "Space Grotesk", cursive;
     font-weight: bold;
     height: 50px;
     bottom: 50px;
@@ -48,7 +53,11 @@
     justify-content: center;
     z-index: 99;
   }
-  .container {
+  .eventsListContainer {
+    display: block;
+  }
+  .eventsListContainerHidden {
+    display: none;
   }
   .icon {
     width: 20px;
