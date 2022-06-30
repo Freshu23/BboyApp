@@ -2,9 +2,17 @@ import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import EventsList from "../components/EventsList/EventsList";
-import Map from "../components/Map/Map";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("/components/Map/MapComponent"), {
+  ssr: false,
+});
 
 export default function Home() {
+  const [isClientLoaded, setIsClientLoaded] = useState(false);
+  useEffect(() => {
+    setIsClientLoaded(true);
+  }, []);
   return (
     <div className={styles.container}>
       <button className={styles.mapButton}>
@@ -13,7 +21,7 @@ export default function Home() {
       </button>
       <EventsList />
       <div className={styles.mapContainer}>
-        <Map />
+        {typeof window !== "undefined" && <Map />}
       </div>
     </div>
   );

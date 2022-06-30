@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./EventInfo.module.css";
 import Chip from "../shared/Chip/Chip";
-import DetailsMap from "../Map/DetailsMap/DetailsMap";
+// import DetailsMap from "../Map/DetailsMap/DetailsMap";
 import Image from "next/image";
 const EventInfo = ({ event, handleModal }) => {
   return (
@@ -41,7 +41,7 @@ const EventInfo = ({ event, handleModal }) => {
           <h2 style={{ marginTop: 0 }}>Event description</h2>
           <p className={styles.infoDescription}>{event.description}</p>
         </div>
-        <DetailsMap event={event} />
+        {/* <DetailsMap event={event} /> */}
       </div>
     </div>
   );
