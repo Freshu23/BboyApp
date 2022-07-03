@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 html,
 body {
   padding: 0;
@@ -93,4 +95,9 @@ a {
 .line-2-open {
   opacity: 0;
 }
-
+@media screen and (max-width: 720px) {
+  .mantine-Modal-inner::-webkit-scrollbar,
+  .content::-webkit-scrollbar {
+    display: none;
+  }
+}

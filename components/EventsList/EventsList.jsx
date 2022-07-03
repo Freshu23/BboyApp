@@ -39,7 +39,7 @@ const EventsList = () => {
   console.log(events);
 
   return (
-    <div>
+    <>
       <div className={styles.categoriesContainer}>
         <MultiSelect
           transitionDuration={150}
@@ -88,7 +88,7 @@ const EventsList = () => {
             .map((event) => <EventBlock key={event.id} event={event} />)
         )}
       </div>
-    </div>
+    </>
   );
 };
 
