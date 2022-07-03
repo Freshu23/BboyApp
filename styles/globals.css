@@ -100,7 +100,4 @@ a {
   .content::-webkit-scrollbar {
     width: 4px;
   }
-  .content {
-    overflow-y: hidden;
-  }
 }
