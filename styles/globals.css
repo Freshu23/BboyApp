@@ -98,6 +98,9 @@ a {
 @media screen and (max-width: 720px) {
   .mantine-Modal-inner::-webkit-scrollbar,
   .content::-webkit-scrollbar {
-    display: none;
+    width: 4px;
+  }
+  .content {
+    overflow-y: hidden;
   }
 }

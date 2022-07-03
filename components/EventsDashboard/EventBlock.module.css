@@ -47,6 +47,7 @@
 @media screen and (max-width: 720px) {
   .blockContainer {
     width: 90%;
+    height: 170px;
   }
   .blockImage {
     width: 80px;
