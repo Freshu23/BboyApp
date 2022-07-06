@@ -15,7 +15,12 @@
 .blockContainer:hover {
   transform: scale(1.03);
 }
-
+.logoContainer {
+  width: 100px;
+}
+.logoContainer span {
+  border-radius: 12px;
+}
 .blockIcon {
   width: 20px;
   height: 20px;
@@ -39,6 +44,7 @@
 }
 .blockInfo p {
   margin: 5px 0;
+  max-width: 200px;
 }
 .eventTitle {
   font-size: 24px;

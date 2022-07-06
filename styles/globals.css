@@ -17,6 +17,7 @@ body,
 #__next {
   height: 100%;
 }
+/*Mantine styles*/
 .mantine-Modal-inner::-webkit-scrollbar,
 .content::-webkit-scrollbar {
   background: var(--dark-gray);
@@ -28,6 +29,12 @@ body,
 .content::-webkit-scrollbar-thumb {
   background: #717171;
   border-radius: 15px;
+}
+.mantine-MultiSelect-searchInput:focus,
+.mantine-MultiSelect-input:focus {
+  outline: none;
+  border-color: var(--baby-blue);
+  font-family: "Inter";
 }
 
 a {
