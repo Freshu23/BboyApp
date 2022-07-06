@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
           href="favicon-196.png"
         />
         <link rel="apple-touch-icon" href="apple-icon-180.png" />
-        <meta name="apple-mobile-web-app-capable" content="yes/" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
@@ -51,11 +51,6 @@ function MyApp({ Component, pageProps }) {
           rel="apple-touch-startup-image"
           href="/apple-splash-1536-2048.jpg"
           media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-        />
-        <link
-          rel="apple-touch-startup-image"
-          href="/apple-splash-1536-2048.jpg"
-          media="(device-width: 750px) and (device-height: 1334px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
         />
         <link
           rel="apple-touch-startup-image"
